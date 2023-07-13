@@ -1,16 +1,16 @@
 exports.homePage = (req, res) => {
-  res.end();
+  res.render();
 };
 const { resolve } = require('path');
 
 exports.homeCtrl = (req, res) => {
-  res.sendFile(resolve('viewe', 'home.pug'));
+  res.render('viewe', 'home.pug');
 };
 
 exports.todoFormCtrl = (req, res) => {
-  res.sendFile(resolve('viewe', 'todoForm.pug'));
+  res.render('viewe', 'todoForm.pug');
 };
 
 exports.todolistCtrl = (req, res) => {
-  res.sendFile(resolve('viewe', 'todolist.pug'));
+  res.render('viewe', 'todolist.pug');
 };
