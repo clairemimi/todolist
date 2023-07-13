@@ -1,7 +1,6 @@
 exports.homePage = (req, res) => {
-  res.render();
+  res.render('viewe', 'home.pug');
 };
-const { resolve } = require('path');
 
 exports.homeCtrl = (req, res) => {
   res.render('viewe', 'home.pug');

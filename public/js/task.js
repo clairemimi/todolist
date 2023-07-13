@@ -1,3 +1,10 @@
+const express = require('express');
+const { resolve } = require('path');
+
+const app = express();
+const { todolist } = require('./data/db.json');
+const { writeFileSync } = require('fs');
+
 function createTask(text, category, userId) {
   // Crée un objet représentant la nouvelle tâche
   const newTask = {

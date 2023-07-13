@@ -15,8 +15,30 @@ html
           li.list-group-item
             span=task.ttx **
        button(type='button' class='btn btn-' + btnType + ' btn-' + btnSize + Modify)
-       button(type='button' class='btn btn-' + btnType + ' btn-' + btnSize + Delete)
+       button(type='button' class='btn btn-' id="buttonDelete" + btnType + ' btn-' + btnSize + Delete)
        button (style={color: 'whith', background: 'green'})
+       script.
+       const buttonsDelete = document.querySelectorAll('button.buttonDelete');
+        console.log(buttonsDelete);
+        buttonsDelete.forEach(buttonDelete => {
+            console.log(buttonDelete);
+            buttonDelete.addEventListener('click', handleClick);
+        });
 
+        function handleClick(event) {
+            console.log(event);
+            const id  = event.target.getAttribute('data-id');
+
+            console.log(todolist);
+            fetch(todoslist/${id}, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                
+            })
+            .catch(error => {
+                // Gérer les erreurs en cas d'échec de la requête
+            });
+        };
        
        script (src="/public/js/index.js")
