@@ -1,0 +1,32 @@
+
+doctype html 
+html 
+    head 
+        meta(charset="utf-8")
+        link(href="../public/css/style.css")
+        title Création d'une tâche
+    body 
+        include includes/nav
+        h1 Création d'une tâche
+        form 
+        input(type="text" placeholder="Créer une tâche" id="ttx" name="text")
+        select(name="category" id="category" ) 
+        option(value="urgent" + urgent ) 
+        option(value="prioritaire" + prioritaire )
+        button(type='button' class=`btn btn-${btnType} btn-${btnSize}`)
+    
+        input=task.ttx 
+        section=task.category 
+        button=task.("onclick"=myFunction(btn)+ Créer)
+
+        category.filters = {
+        'my-own-filter': function (task,category) {
+        if (category.userId)task,= 'Start\n' + ttx ;
+        if (category.taskId)task, = ttx + '\nEnd';
+        return ttx ;
+        }
+        
+    };
+
+
+        script (src="/public/js/index.js")
